@@ -6,8 +6,13 @@ Route::get('/', 'PrincipalController@principal');
 Route::get('/sobre-nos', 'SobreNosController@sobrenos');
 Route::get('/contato', 'ContatoController@contato');
 
-Route::get('/contato/{nome}/{sobrenome}/{idade}', function (string $nome, string $sobrenome, string $idade) {
-  echo '<h3>Estamos aqui: ' . $nome . '</h3>';
-  echo '<h3>Estamos aqui: ' . $sobrenome . '</h3>';
-  echo '<h3>Estamos aqui: ' . $idade . '</h3>';
-});
+Route::get(
+  '/contato/{nome}/{categoria_id?}',
+  function (
+    string $nome,
+    int $categoria_id  = 1
+  ) {
+    echo '<h3>Nome: ' . $nome . '</h3>';
+    echo '<h3>Categoria: ' . $categoria_id . '</h3>';
+  }
+)->where('categoria_id', '[0-9]+')->where('nome', '[A-Za-z]+');
