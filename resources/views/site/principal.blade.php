@@ -29,7 +29,10 @@
             <div class="contato">
                 <h1>Contato</h1>
                 <p>Caso tenha qualquer dúvida por favor entre em contato com nossa equipe pelo formulário abaixo.<p>
-                @component('site.layouts._components.form_contato') @endcomponent
+                @component('site.layouts._components.form_contato', ['classe' => 'borda-branca'])
+                <p>Nossa equipe analisará a sua mensagem e retornaremos o mais rápido possível.</p>
+                <p>Tempo médio de resposta é de 48 horas</p>
+                @endcomponent
             </div>
         </div>
     </div>
