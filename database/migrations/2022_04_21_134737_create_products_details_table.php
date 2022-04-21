@@ -15,6 +15,9 @@ class CreateProductsDetailsTable extends Migration
     {
         Schema::create('products_details', function (Blueprint $table) {
             $table->id();
+            $table->float('comprimento', 8,2);
+            $table->float('largura', 8, 2);
+            $table->float('altura', 8,2);
             $table->timestamps();
         });
     }
