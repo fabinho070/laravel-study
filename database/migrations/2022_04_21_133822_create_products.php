@@ -15,7 +15,6 @@ class CreateProducts extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('product_id');
             $table->string('nome', 100);
             $table->text('descricao')->nullable();
             $table->integer('peso')->nullable();
@@ -23,10 +22,6 @@ class CreateProducts extends Migration
             $table->integer('estoque_minimo')->default(1);
             $table->integer('estoque_maximo')->default(1);
             $table->timestamps();
-
-            //constraint in table products
-            $table->foreign('product_id')->references('id')->on('products');
-            $table->unique('product_id'); //Impedir duplicidade de id. Sendo de um pra um
         });
     }
 
