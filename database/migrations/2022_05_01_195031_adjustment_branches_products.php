@@ -56,7 +56,8 @@ class AdjustmentBranchesProducts extends Migration
         });
 
         Schema::dropIfExists('product_branches');
-
+        
         Schema::dropIfExists('branches');
+
     }
 }
